@@ -1,4 +1,4 @@
-window.addEventListener('load', function () {
+window.addEventListener('load', function() {
 
 	let firstInput = document.querySelector('.firstInput')
 	let secondInput = document.querySelector('.secondInput')
@@ -16,7 +16,8 @@ window.addEventListener('load', function () {
 			add: (a, b) => a + b,
 			subtract: (a, b) => a - b,
 			multiply: (a, b) => a * b,
-			divide: (a, b) => a / b
+			divide: (a, b) => a / b,
+			modulo: (a, b) => a % b,
 		}
 
 		result.textContent = calculateFrom[operator.value](firstOperand, secondOperand)
