@@ -1,4 +1,4 @@
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
 
 	let firstInput = document.querySelector('.firstInput')
 	let secondInput = document.querySelector('.secondInput')
@@ -6,26 +6,21 @@ window.addEventListener('load', function() {
 	let button = document.querySelector('.button')
 	let result = document.querySelector('.result')
 
-	button.addEventListener('click', calculateResult)
+	button.addEventListener('click', getResult)
 
-	function calculateResult() {
+	function getResult() {
 		let firstOperand = parseFloat(firstInput.value) || 0
 		let secondOperand = parseFloat(secondInput.value) || 0
 
-		switch (operator.value) {
-			case 'add':
-			  result.innerHTML = firstOperand + secondOperand
-			  break
-			case 'subtract':
-			  result.innerHTML = firstOperand - secondOperand
-			  break
-			case 'multiply':
-				result.innerHTML = firstOperand * secondOperand
-			  break
-			case 'divide':
-			  result.innerHTML = firstOperand / secondOperand
-			  break
+		let calculateFrom = {
+			add: (a, b) => a + b,
+			subtract: (a, b) => a - b,
+			multiply: (a, b) => a * b,
+			divide: (a, b) => a / b
 		}
+
+		result.textContent = calculateFrom[operator.value](firstOperand, secondOperand)
+
 		button.disabled = true
 	}
 
