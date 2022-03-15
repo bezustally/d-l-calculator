@@ -9,7 +9,7 @@ window.addEventListener('load', function () {
 	button.addEventListener('click', getResult)
 
 	function getResult() {
-		let firstOperand = parseFloat(firstInput.value) || 0
+		let firstOperand = parseFloat(firstInput.value) || 0 // if number is not set, use zero
 		let secondOperand = parseFloat(secondInput.value) || 0
 
 		let calculateFrom = {
@@ -24,7 +24,7 @@ window.addEventListener('load', function () {
 		button.disabled = true
 	}
 
-	[firstInput, secondInput, operator].forEach(el => el.addEventListener('input', enableButton)); // !!!! f**king semicolon
+	[firstInput, secondInput, operator].forEach(el => el.addEventListener('input', enableButton));
 	[firstInput, secondInput].forEach(el => el.addEventListener('input', clearInput))
 
 	function clearInput() {
